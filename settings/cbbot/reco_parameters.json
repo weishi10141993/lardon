@@ -93,7 +93,7 @@
       },
 
       "single_hit":{
-	  "max_per_view":3,
+	  "max_per_view":4,
 	  "outlier_dmax":2.5,
 	  "veto_nchan":16,
 	  "veto_nticks":150,

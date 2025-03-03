@@ -252,7 +252,7 @@ class SingleHits(IsDescription):
     trigger = UInt32Col()
 
     n_hits = UInt32Col(shape=(cf.n_view))
-    hit_IDs = Int32Col(shape=(cf.n_view,3))
+    hit_IDs = Int32Col(shape=(cf.n_view,4))
 
     ID = UInt32Col()
 
@@ -485,16 +485,16 @@ def store_hits(h5file):
 
 def store_single_hits(h5file):
     sh = h5file.root.single_hits.row
-    
+
     for it in dc.single_hits_list:
         sh['event'] = dc.evt_list[-1].evt_nb
-        sh['trigger'] = dc.evt_list[-1].trigger_nb 
+        sh['trigger'] = dc.evt_list[-1].trigger_nb
 
         sh['n_hits'] = it.n_hits
 
         sh['ID'] = it.ID_SH
 
-        id_np = np.zeros((cf.n_view, 3), dtype=int)
+        id_np = np.zeros((cf.n_view, 4), dtype=int)
         id_np.fill(-1)
         for i,j in enumerate(it.IDs):
             id_np[i][0:len(j)] = j
