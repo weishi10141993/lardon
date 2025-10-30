@@ -6,7 +6,12 @@ def set_style():
               'axes.labelsize': 'x-large',
               'axes.titlesize': 'x-large',
               'xtick.labelsize':'x-large',
-              'ytick.labelsize':'x-large'}
+              'ytick.labelsize':'x-large',
+              "font.family": "serif",
+              "font.serif": ["CMU Serif", "STIX", "DejaVu Serif"],  # Try in order
+}
+              #"font.serif": ["Computer Modern Roman"],
+              #"mathtext.fontset": "cm"}
               
     mpl.rcParams.update(params)
     
